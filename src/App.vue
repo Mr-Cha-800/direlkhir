@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <q-layout view="lHh Lpr lFf" >
+    <headerc/>
+    <qdrawar/>
+    <q-page-container>
+        <router-view />
+    </q-page-container>
+    <footerc/>
+  </q-layout>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import headerc from './views/MAIN/components/header'
+import qdrawar from './views/MAIN/components/qdrawar'
+import footerc from './views/MAIN/components/footer'
+export default {
+  name: 'MainLayout',
+  components: {
+    headerc,
+    qdrawar,
+    footerc
+  },
+  data () {
+    return {
+    }
+  },
+  computed: {
+  }
 }
+</script>
+<style lang="scss">
 
-#nav {
-  padding: 30px;
-}
+    @import url("../public/assets/css/themify-icons.css");
+    @import url("../public/assets/css/font-awesome.min.css");
+    @import url("../public/assets/css/flaticon.css");
+    @import url("../public/assets/css/animate.css");
+    @import url("../public/assets/css/slick.css");
+    @import url("../public/assets/css/slick-theme.css");
+    @import url("../public/assets/css/swiper.min.css");
+    @import url("../public/assets/css/owl.transitions.css");
+    @import url("../public/assets/css/jquery.fancybox.css");
+    @import url("../public/assets/css/odometer-theme-default.css");
+    @import url("../public/assets/css/nice-select.css");
+    @import url("../public/assets/css/style.css");
+.menu-list .q-item{
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  border-radius: 0 32px 32px 0
 }
 </style>

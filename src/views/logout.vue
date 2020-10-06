@@ -1,0 +1,23 @@
+<template>
+<div></div>
+</template>
+
+<script>
+import { mapActions } from 'vuex'
+export default {
+
+  methods: {
+    ...mapActions('auth', ['destroyToken'])
+  },
+  created () {
+    this.destroyToken()
+      .then(response => {
+        this.$router.push({ name: 'Home' })
+      })
+  }
+}
+</script>
+
+<style>
+
+</style>
